@@ -2,7 +2,11 @@ const rand = cap => Math.floor(Math.random() * cap) + 1
 let goalNum
 let currNum = 0
 let isFinished = false
-let pics = []
+let x = document.getElementById("picture1"),
+    y = document.getElementById("picture2"),
+    z = document.getElementById("picture3")
+
+
 
 // initializes application
 const init = _ => {
@@ -15,20 +19,19 @@ const init = _ => {
     document.querySelector('#goalNum').textContent = goalNum
     // displays user's current progress
     document.querySelector('#currNum').textContent = 0
-    // empties button div
-    document.querySelector('#pics').innerHTML = ''
+    // // empties button div
+    // document.querySelector('#pictures').innerHTML = ''
 
     document.querySelector('#result').textContent = 'Click A Button to get closer to the number displayed.'
 
-    // generates three buttons with random values
-    for (let i = 0; i < 3; i++) {
-        let pics = ['./assests/images/Green.jpg', './assests/images/Pink.jpg', './assests/images/Red.jpg']
-        document.getElementById
-        pics.className = 'randNum'
-        pics.textContent = 'pics'
-        pics.setAttribute('data-value', rand(20))
-        document.querySelector('#pics').append(pics)
-    }
+    // gives pics random values
+    x.setAttribute('data-value', rand(20))
+    y.setAttribute('data-value', rand(20))
+    z.setAttribute('data-value', rand(20))
+    console.log(x)
+    console.log(y)
+    console.log(z)
+
 }
 
 const reset = _ => {
