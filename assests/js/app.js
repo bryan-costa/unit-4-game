@@ -26,8 +26,11 @@ const init = _ => {
 
     // gives pics random values
     x.setAttribute('data-value', rand(20))
+    x.className = 'randNum'
     y.setAttribute('data-value', rand(20))
+    y.className = 'randNum'
     z.setAttribute('data-value', rand(20))
+    z.className = 'randNum'
     console.log(x)
     console.log(y)
     console.log(z)
