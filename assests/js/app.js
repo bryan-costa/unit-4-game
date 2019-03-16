@@ -4,7 +4,10 @@ let currNum = 0
 let isFinished = false
 let x = document.getElementById("picture1"),
     y = document.getElementById("picture2"),
-    z = document.getElementById("picture3")
+    z = document.getElementById("picture3"),
+    Win = 1
+    Loss = 1
+
 
 
 
@@ -19,10 +22,10 @@ const init = _ => {
     document.querySelector('#goalNum').textContent = goalNum
     // displays user's current progress
     document.querySelector('#currNum').textContent = 0
-    // // empties button div
-    // document.querySelector('#pictures').innerHTML = ''
 
-    document.querySelector('#result').textContent = 'Click A Button to get closer to the number displayed.'
+    document.querySelector('.instructions').innerHTML = 'Click a Gem to get closer to the number displayed.'
+
+    document.querySelector('#result').textContent = ""
 
     // gives pics random values
     x.setAttribute('data-value', rand(20))
@@ -46,13 +49,15 @@ const reset = _ => {
 const check = _ => {
     if (currNum === goalNum) {
         isFinished = true
-        document.querySelector('#result').textContent = 'Congratulations! You Matched The Number!'
+        document.querySelector('#Wins').textContent = "Wins: " + Win++
+
     } else if (currNum > goalNum) {
         isFinished = true
-        document.querySelector('#result').textContent = 'Oh No! You seriously suck at this!'
+        document.querySelector('#Losses').textContent = "Losses: " + Loss++
     } else {
         document.querySelector('#result').textContent = 'Keep Going...'
     }
+    reset()
 }
 
 document.addEventListener('click', e => {
